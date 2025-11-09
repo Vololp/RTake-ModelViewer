@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcc1twjqvgo7p"]
+
+[ext_resource type="Theme" uid="uid://cmaf4w1ii8f0o" path="res://App/Style/MV_APP.tres" id="1_0pddw"]
+
+[node name="FileDialog" type="FileDialog"]
+oversampling_override = 1.0
+title = "Load a Model"
+initial_position = 1
+size = Vector2i(800, 500)
+visible = true
+max_size = Vector2i(900, 900)
+theme = ExtResource("1_0pddw")
+ok_button_text = "Load"
+dialog_close_on_escape = false
+cancel_button_text = "Close"
+mode_overrides_title = false
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.gltf", "*.fbx", "*.obj", "*.glb")
+hidden_files_toggle_enabled = false
+file_filter_toggle_enabled = false
+file_sort_options_enabled = false
+folder_creation_enabled = false
+favorites_enabled = false
+recent_list_enabled = false
+layout_toggle_enabled = false
