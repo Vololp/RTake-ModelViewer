@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bufu7yyu6rw6c"]
 
 [ext_resource type="Shader" uid="uid://56fm0r0oy1x1" path="res://App/Shader/Grid.gdshader" id="1_sgxec"]
-[ext_resource type="Script" uid="uid://cncb3r1jxt727" path="res://App/Main.gd" id="1_uj36f"]
+[ext_resource type="Script" uid="uid://cncb3r1jxt727" path="res://Scripts/Main.gd" id="1_uj36f"]
 [ext_resource type="Environment" uid="uid://bhkti3gn6dxiw" path="res://App/environment.tres" id="2_uj36f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q0ee7"]
@@ -56,5 +56,3 @@ environment = ExtResource("2_uj36f")
 wait_time = 1.5
 
 [node name="Storage" type="Node3D" parent="."]
-
-[connection signal="timeout" from="App_Storage/Timer" to="." method="ClearMessage"]
