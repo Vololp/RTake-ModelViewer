@@ -1,6 +1,45 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnrappxi8rx81"]
+[gd_scene load_steps=7 format=3 uid="uid://dnrappxi8rx81"]
 
-[ext_resource type="Theme" uid="uid://cmaf4w1ii8f0o" path="res://App/Style/MV_APP.tres" id="1_qx0fd"]
+[ext_resource type="Theme" uid="uid://cmaf4w1ii8f0o" path="res://App/Theme/UI_Theme_LeftSide.tres" id="1_qx0fd"]
+[ext_resource type="Theme" uid="uid://ho11e7pl1o11" path="res://App/Theme/UI_Theme_RightSide.tres" id="2_qx0fd"]
+[ext_resource type="Texture2D" uid="uid://cctjes464pobx" path="res://App/Icons/SettingsGearIcon.png" id="3_heedv"]
+
+[sub_resource type="Animation" id="Animation_qx0fd"]
+resource_name = "Open_SettingsPanel"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SettingsPanel:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-198, 39), Vector2(0, 39)]
+}
+
+[sub_resource type="Animation" id="Animation_heedv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SettingsPanel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-198, 39)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v5pbv"]
+_data = {
+&"Open_SettingsPanel": SubResource("Animation_qx0fd"),
+&"RESET": SubResource("Animation_heedv")
+}
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -12,10 +51,12 @@ grow_vertical = 2
 
 [node name="ErrorBox" type="LineEdit" parent="."]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 281.0
-offset_bottom = 46.0
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -34.0
+offset_right = 876.0
 grow_horizontal = 2
 theme = ExtResource("1_qx0fd")
 editable = false
@@ -25,8 +66,8 @@ flat = true
 layout_mode = 0
 offset_left = 5.0
 offset_top = 5.0
-offset_right = 124.0
-offset_bottom = 46.0
+offset_right = 112.0
+offset_bottom = 34.0
 size_flags_horizontal = 13
 size_flags_vertical = 13
 theme = ExtResource("1_qx0fd")
@@ -34,14 +75,210 @@ toggle_mode = true
 text = "Load Model"
 
 [node name="RemoveButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 132.0
+layout_mode = 1
+anchors_preset = -1
+offset_left = 112.0
 offset_top = 5.0
-offset_right = 275.0
-offset_bottom = 46.0
+offset_right = 246.0
+offset_bottom = 34.0
 size_flags_horizontal = 13
 size_flags_vertical = 13
-theme = ExtResource("1_qx0fd")
+theme = ExtResource("2_qx0fd")
 disabled = true
 toggle_mode = true
 text = "Remove Model"
+
+[node name="SettingsPanel" type="Control" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 0
+offset_left = -198.0
+offset_top = 39.0
+offset_right = 29.0
+offset_bottom = 465.0
+
+[node name="Settings_Button" type="Button" parent="SettingsPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_bottom = 28.0
+grow_horizontal = 0
+scale = Vector2(1, 0.99533373)
+theme = ExtResource("2_qx0fd")
+icon = ExtResource("3_heedv")
+icon_alignment = 2
+expand_icon = true
+
+[node name="Background" type="Panel" parent="SettingsPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.86800003
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_right = 0.96398926
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qx0fd")
+
+[node name="WorldSettingsContainer" type="Control" parent="SettingsPanel"]
+clip_contents = true
+layout_mode = 1
+anchor_right = 0.86800003
+anchor_bottom = 1.0
+offset_right = -0.036010742
+
+[node name="WorldLight" type="Control" parent="SettingsPanel/WorldSettingsContainer"]
+z_index = 1
+clip_contents = true
+anchors_preset = 0
+offset_right = 197.0
+offset_bottom = 108.0
+
+[node name="YAxisSlider" type="HSlider" parent="SettingsPanel/WorldSettingsContainer/WorldLight"]
+z_index = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -56.5
+offset_top = -50.5
+offset_right = 95.5
+offset_bottom = -34.5
+grow_horizontal = 2
+grow_vertical = 0
+min_value = -5.0
+max_value = 5.0
+step = 0.0
+
+[node name="XAxisSlider" type="HSlider" parent="SettingsPanel/WorldSettingsContainer/WorldLight"]
+z_index = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -56.5
+offset_top = -72.5
+offset_right = 95.5
+offset_bottom = -56.5
+grow_horizontal = 2
+grow_vertical = 0
+min_value = -5.0
+max_value = 5.0
+step = 0.0
+
+[node name="LightSlider" type="HSlider" parent="SettingsPanel/WorldSettingsContainer/WorldLight"]
+z_index = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -56.5
+offset_top = -28.5
+offset_right = 95.5
+offset_bottom = -12.5
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 2.0
+step = 0.0
+value = 0.897
+
+[node name="Label2" type="Label" parent="SettingsPanel/WorldSettingsContainer/WorldLight"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -53.5
+offset_right = 41.0
+offset_bottom = -33.5
+grow_vertical = 0
+theme_override_font_sizes/font_size = 14
+text = "Y-Axis"
+
+[node name="Label4" type="Label" parent="SettingsPanel/WorldSettingsContainer/WorldLight"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -28.5
+offset_right = 41.0
+offset_bottom = -8.5
+grow_vertical = 0
+theme_override_font_sizes/font_size = 14
+text = "Light"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="SettingsPanel/WorldSettingsContainer/WorldLight"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -74.5
+offset_right = 41.0
+offset_bottom = -54.5
+grow_vertical = 0
+theme_override_font_sizes/font_size = 14
+text = "X-Axis"
+
+[node name="Label" type="Label" parent="SettingsPanel/WorldSettingsContainer/WorldLight"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -57.0
+offset_right = 57.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Direction Light"
+
+[node name="HSeparator" type="HSeparator" parent="SettingsPanel/WorldSettingsContainer/WorldLight"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -26.0
+offset_right = 198.0
+offset_bottom = -21.0
+grow_vertical = 2
+
+[node name="HSeparator2" type="HSeparator" parent="SettingsPanel/WorldSettingsContainer/WorldLight"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 20.5
+offset_right = 198.0
+offset_bottom = 25.5
+grow_vertical = 2
+
+[node name="HSeparator3" type="HSeparator" parent="SettingsPanel/WorldSettingsContainer/WorldLight"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 46.0
+offset_right = 198.0
+offset_bottom = 51.0
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_v5pbv")
+}

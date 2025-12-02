@@ -20,13 +20,14 @@ config/icon="uid://bdtv1g3usq2of"
 
 [autoload]
 
+Ui="*res://App/ui.tscn"
+FileWindow="*res://App/fileWindow.tscn"
 FilePathManager="*res://Scripts/FilePathManager.gd"
 UiManager="*res://Scripts/UiManager.gd"
-FileWindow="*res://App/fileWindow.tscn"
-Ui="*res://App/ui.tscn"
 DebuggingManager="*res://Scripts/DebuggingManager.gd"
 UsrControlManager="*res://Scripts/UsrControlManager.gd"
 VariantManager="*res://Scripts/VariantManager.gd"
+WorldSettingsManager="*res://Scripts/WorldSettingsManager.gd"
 
 [display]
 

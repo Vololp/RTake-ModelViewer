@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dcc1twjqvgo7p"]
 
-[ext_resource type="Theme" uid="uid://cmaf4w1ii8f0o" path="res://App/Style/MV_APP.tres" id="1_0pddw"]
+[ext_resource type="Theme" uid="uid://cmaf4w1ii8f0o" path="res://App/Theme/UI_Theme_LeftSide.tres" id="1_0pddw"]
 
 [node name="FileDialog" type="FileDialog"]
 oversampling_override = 1.0

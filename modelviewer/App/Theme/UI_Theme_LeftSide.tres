@@ -1,0 +1,24 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cmaf4w1ii8f0o"]
+
+[ext_resource type="StyleBox" uid="uid://byo7elevkjpaj" path="res://App/Theme/Styles/UI_Frame_Disable_Left.tres" id="1_ogxrq"]
+[ext_resource type="StyleBox" uid="uid://dtw537hqcj1d4" path="res://App/Theme/Styles/UI_Frame_Left.tres" id="2_vodpj"]
+[ext_resource type="StyleBox" uid="uid://byutopg27uveo" path="res://App/Theme/Styles/UI_Frame_Clicked.tres" id="3_ogxrq"]
+[ext_resource type="StyleBox" uid="uid://cs0e64ihxlody" path="res://App/Theme/Styles/UI_Frame_Panel.tres" id="4_urynx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vodpj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[resource]
+Button/constants/align_to_largest_stylebox = 1
+Button/constants/h_separation = 3
+Button/font_sizes/font_size = 17
+Button/styles/disabled = ExtResource("1_ogxrq")
+Button/styles/focus = ExtResource("2_vodpj")
+Button/styles/hover = ExtResource("2_vodpj")
+Button/styles/normal = ExtResource("2_vodpj")
+Button/styles/pressed = ExtResource("3_ogxrq")
+LineEdit/colors/font_uneditable_color = Color(1, 1, 1, 0.69803923)
+LineEdit/constants/outline_size = 1
+LineEdit/styles/focus = SubResource("StyleBoxFlat_vodpj")
+LineEdit/styles/normal = ExtResource("2_vodpj")
+Panel/styles/panel = ExtResource("4_urynx")

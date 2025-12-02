@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode blend_mix,depth_draw_opaque, unshaded;
+render_mode blend_mix,depth_draw_opaque, unshaded,cull_disabled;
 
 uniform vec4 gridColor: source_color;
 uniform vec4 checkerColor: source_color;

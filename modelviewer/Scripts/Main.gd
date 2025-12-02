@@ -7,6 +7,7 @@ class_name MAIN_SCRIPT extends Node3D
 @export var GetCamera : Camera3D
 @export var Storage : Node3D
 @export var GetTimer : Timer
+@export var WorldLight : DirectionalLight3D
 
 ######################################
 ## The Engine Functions
@@ -21,14 +22,24 @@ func _ready() -> void:
 	VariantManager.CurrentCamera = GetCamera
 	VariantManager.Storage = Storage
 	VariantManager.GetTimer = GetTimer
+	VariantManager.WorldLight = WorldLight
 
 	## This load's signals on start.
 
 	Ui.find_child("LoadButton").connect("pressed",UI_MANAGER.LoadButton)
 	Ui.find_child("RemoveButton").connect("pressed",UI_MANAGER.RemoveButton)
+	Ui.find_child("Settings_Button").connect("pressed",UI_MANAGER.ShowSettingsPanel)
+	Ui.find_child("XAxisSlider").connect("value_changed",WORLDSETTINGS_MANAGER.WorldLightSliderX)
+	Ui.find_child("YAxisSlider").connect("value_changed",WORLDSETTINGS_MANAGER.WorldLightSliderY)
+	Ui.find_child("LightSlider").connect("value_changed",WORLDSETTINGS_MANAGER.WorldLighting)
 	FileWindow.connect("file_selected",FILE_PATH_MANAGER.LoadModelFromFile)
 	get_window().files_dropped.connect(FILE_PATH_MANAGER.LoadModelFromFile)
 	GetTimer.connect("timeout",DEBUGGING_MANAGER.ClearErrorMessage)
+
+	# Setting the slider values to the values on the DirectionalLight3D Node.
+	Ui.find_child("XAxisSlider").value = WorldLight.global_rotation.x
+	Ui.find_child("YAxisSlider").value = WorldLight.global_rotation.y
+	Ui.find_child("LightSlider").value = WorldLight.light_energy
 
 	## This will see the usr drop a model file on the excutable to open on start.
 
