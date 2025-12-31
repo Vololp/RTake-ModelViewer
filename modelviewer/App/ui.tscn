@@ -1,10 +1,110 @@
-[gd_scene load_steps=7 format=3 uid="uid://dnrappxi8rx81"]
+[gd_scene load_steps=18 format=3 uid="uid://dnrappxi8rx81"]
 
-[ext_resource type="Theme" uid="uid://cmaf4w1ii8f0o" path="res://App/Theme/UI_Theme_LeftSide.tres" id="1_qx0fd"]
-[ext_resource type="Theme" uid="uid://ho11e7pl1o11" path="res://App/Theme/UI_Theme_RightSide.tres" id="2_qx0fd"]
-[ext_resource type="Texture2D" uid="uid://cctjes464pobx" path="res://App/Icons/SettingsGearIcon.png" id="3_heedv"]
+[ext_resource type="StyleBox" uid="uid://cs0e64ihxlody" path="res://Theme/Styles/UI_Frame_Panel.tres" id="2_cl8b6"]
+[ext_resource type="Texture2D" uid="uid://cctjes464pobx" path="res://Theme/Icons/SettingsGearIcon.png" id="3_heedv"]
+[ext_resource type="Theme" uid="uid://c6pd0gfshfxu2" path="res://Theme/UI_Theme_Normal.tres" id="4_u48er"]
+[ext_resource type="Shader" uid="uid://c6cx3l62ib7l2" path="res://App/Shader/frosted-glass.gdshader" id="5_v5pbv"]
+[ext_resource type="Texture2D" uid="uid://bcqikobp68c6n" path="res://Theme/Icons/InstanceCube.png" id="5_vw2im"]
 
-[sub_resource type="Animation" id="Animation_qx0fd"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0f1tc"]
+bg_color = Color(0.23921569, 0.23921569, 0.23921569, 0.69803923)
+corner_radius_top_left = 2
+corner_radius_bottom_left = 2
+shadow_offset = Vector2(0.792, 1.929)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b27pp"]
+bg_color = Color(0.23921569, 0.23921569, 0.23921569, 0.9607843)
+corner_radius_top_left = 2
+corner_radius_bottom_left = 2
+shadow_offset = Vector2(0.792, 1.929)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5pbv"]
+bg_color = Color(0.23921569, 0.23921569, 0.23921569, 0.69803923)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_offset = Vector2(0.792, 1.929)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vodpj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_y33m6"]
+Button/constants/align_to_largest_stylebox = 1
+Button/constants/h_separation = 3
+Button/font_sizes/font_size = 17
+Button/styles/disabled = SubResource("StyleBoxFlat_0f1tc")
+Button/styles/focus = SubResource("StyleBoxFlat_b27pp")
+Button/styles/hover = SubResource("StyleBoxFlat_b27pp")
+Button/styles/normal = SubResource("StyleBoxFlat_b27pp")
+Button/styles/pressed = SubResource("StyleBoxFlat_v5pbv")
+LineEdit/colors/font_uneditable_color = Color(1, 1, 1, 0.69803923)
+LineEdit/constants/outline_size = 1
+LineEdit/styles/focus = SubResource("StyleBoxFlat_vodpj")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_b27pp")
+Panel/styles/panel = ExtResource("2_cl8b6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cl8b6"]
+shader = ExtResource("5_v5pbv")
+shader_parameter/blur = 5.433
+shader_parameter/warp_intensity = 0.08
+shader_parameter/strength_x = 12.0
+shader_parameter/strength_y = 12.0
+shader_parameter/offset_x = 0.0
+shader_parameter/offset_y = 0.0
+shader_parameter/corner_radius = 16.0
+shader_parameter/edge_smoothness = 1.7
+shader_parameter/tint = Color(0.1882353, 0.17254902, 0.16862746, 0.56078434)
+shader_parameter/edge_highlight = Color(1, 1, 1, 0.3)
+shader_parameter/edge_width = 1.06
+shader_parameter/chromatic_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v5pbv"]
+shader = ExtResource("5_v5pbv")
+shader_parameter/blur = 3.5
+shader_parameter/warp_intensity = 0.025
+shader_parameter/strength_x = 12.0
+shader_parameter/strength_y = 12.0
+shader_parameter/offset_x = 0.0
+shader_parameter/offset_y = 0.0
+shader_parameter/corner_radius = 16.0
+shader_parameter/edge_smoothness = 1.0
+shader_parameter/tint = Color(0.95, 0.97, 1, 0.12)
+shader_parameter/edge_highlight = Color(1, 1, 1, 0.3)
+shader_parameter/edge_width = 1.5
+shader_parameter/chromatic_strength = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ilqkl"]
+shader = ExtResource("5_v5pbv")
+shader_parameter/blur = 3.5
+shader_parameter/warp_intensity = 0.025
+shader_parameter/strength_x = 12.0
+shader_parameter/strength_y = 12.0
+shader_parameter/offset_x = 0.0
+shader_parameter/offset_y = 0.0
+shader_parameter/corner_radius = 16.0
+shader_parameter/edge_smoothness = 1.0
+shader_parameter/tint = Color(0.1882353, 0.17254902, 0.16862746, 0.56078434)
+shader_parameter/edge_highlight = Color(1, 1, 1, 0.3)
+shader_parameter/edge_width = 1.5
+shader_parameter/chromatic_strength = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vw2im"]
+shader = ExtResource("5_v5pbv")
+shader_parameter/blur = 5.433
+shader_parameter/warp_intensity = 0.08
+shader_parameter/strength_x = 12.0
+shader_parameter/strength_y = 12.0
+shader_parameter/offset_x = 0.0
+shader_parameter/offset_y = 0.0
+shader_parameter/corner_radius = 16.0
+shader_parameter/edge_smoothness = 1.7
+shader_parameter/tint = Color(0.1882353, 0.17254902, 0.16862746, 0.56078434)
+shader_parameter/edge_highlight = Color(1, 1, 1, 0.3)
+shader_parameter/edge_width = 1.06
+shader_parameter/chromatic_strength = 0.0
+
+[sub_resource type="Animation" id="Animation_u48er"]
 resource_name = "Open_SettingsPanel"
 length = 0.3
 tracks/0/type = "value"
@@ -17,10 +117,10 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-198, 39), Vector2(0, 39)]
+"values": [Vector2(-198, 39), Vector2(4.678, 39)]
 }
 
-[sub_resource type="Animation" id="Animation_heedv"]
+[sub_resource type="Animation" id="Animation_v5pbv"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -35,10 +135,10 @@ tracks/0/keys = {
 "values": [Vector2(-198, 39)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_v5pbv"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vw2im"]
 _data = {
-&"Open_SettingsPanel": SubResource("Animation_qx0fd"),
-&"RESET": SubResource("Animation_heedv")
+&"Open_SettingsPanel": SubResource("Animation_u48er"),
+&"RESET": SubResource("Animation_v5pbv")
 }
 
 [node name="UI" type="Control"]
@@ -46,6 +146,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -58,9 +160,17 @@ offset_left = 5.0
 offset_top = -34.0
 offset_right = 876.0
 grow_horizontal = 2
-theme = ExtResource("1_qx0fd")
+theme = SubResource("Theme_y33m6")
 editable = false
 flat = true
+
+[node name="Background" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_cl8b6")
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 246.0
+offset_bottom = 34.0
 
 [node name="LoadButton" type="Button" parent="."]
 layout_mode = 0
@@ -70,9 +180,10 @@ offset_right = 112.0
 offset_bottom = 34.0
 size_flags_horizontal = 13
 size_flags_vertical = 13
-theme = ExtResource("1_qx0fd")
+theme = ExtResource("4_u48er")
 toggle_mode = true
 text = "Load Model"
+flat = true
 
 [node name="RemoveButton" type="Button" parent="."]
 layout_mode = 1
@@ -83,10 +194,11 @@ offset_right = 246.0
 offset_bottom = 34.0
 size_flags_horizontal = 13
 size_flags_vertical = 13
-theme = ExtResource("2_qx0fd")
+theme = ExtResource("4_u48er")
 disabled = true
 toggle_mode = true
 text = "Remove Model"
+flat = true
 
 [node name="SettingsPanel" type="Control" parent="."]
 clip_contents = true
@@ -98,29 +210,205 @@ offset_right = 29.0
 offset_bottom = 465.0
 
 [node name="Settings_Button" type="Button" parent="SettingsPanel"]
+show_behind_parent = true
+z_index = 1
+material = SubResource("ShaderMaterial_v5pbv")
+use_parent_material = true
+clip_contents = true
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -34.0
-offset_bottom = 28.0
+offset_left = -28.0
+offset_bottom = 28.131264
 grow_horizontal = 0
 scale = Vector2(1, 0.99533373)
-theme = ExtResource("2_qx0fd")
+theme = ExtResource("4_u48er")
 icon = ExtResource("3_heedv")
+flat = true
 icon_alignment = 2
 expand_icon = true
 
-[node name="Background" type="Panel" parent="SettingsPanel"]
+[node name="Button1 Background" type="ColorRect" parent="SettingsPanel/Settings_Button"]
+show_behind_parent = true
+z_index = -1
+material = SubResource("ShaderMaterial_ilqkl")
+clip_contents = true
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+mouse_filter = 2
+mouse_behavior_recursive = 1
+
+[node name="Instance_Button" type="Button" parent="SettingsPanel"]
+z_index = 1
+material = SubResource("ShaderMaterial_v5pbv")
+use_parent_material = true
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.86800003
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -28.0
+offset_top = 33.0
+offset_bottom = 61.131264
+grow_horizontal = 0
+scale = Vector2(1, 0.99533373)
+theme = ExtResource("4_u48er")
+icon = ExtResource("5_vw2im")
+flat = true
+icon_alignment = 2
+expand_icon = true
+
+[node name="Button2 Background" type="ColorRect" parent="SettingsPanel/Instance_Button"]
+z_index = -1
+material = SubResource("ShaderMaterial_ilqkl")
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+mouse_filter = 2
+mouse_behavior_recursive = 1
+mouse_force_pass_scroll_events = false
+
+[node name="Panel Background" type="ColorRect" parent="SettingsPanel"]
+material = SubResource("ShaderMaterial_vw2im")
+layout_mode = 0
+offset_right = 197.0
+offset_bottom = 426.0
+color = Color(1, 1, 1, 0.76862746)
+
+[node name="InstanceSettingsContainer" type="Control" parent="SettingsPanel"]
+visible = false
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -12.0
-offset_right = 0.96398926
+offset_right = -30.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_qx0fd")
+
+[node name="Label" type="Label" parent="SettingsPanel/InstanceSettingsContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -98.5
+offset_right = 98.5
+offset_bottom = 28.0
+grow_horizontal = 2
+theme = ExtResource("4_u48er")
+text = "Instance Settings"
+horizontal_alignment = 1
+
+[node name="InstanceSize" type="SpinBox" parent="SettingsPanel/InstanceSettingsContainer"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 36.0
+offset_right = 210.0
+offset_bottom = 72.0
+theme = ExtResource("4_u48er")
+max_value = 1000.0
+step = 0.0
+allow_greater = true
+allow_lesser = true
+prefix = "Size "
+
+[node name="Label2" type="Label" parent="SettingsPanel/InstanceSettingsContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -98.5
+offset_top = 80.0
+offset_right = 98.5
+offset_bottom = 108.0
+grow_horizontal = 2
+theme = ExtResource("4_u48er")
+text = "Materials"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="SettingsPanel/InstanceSettingsContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -98.5
+offset_top = 179.0
+offset_right = 98.5
+offset_bottom = 207.0
+grow_horizontal = 2
+theme = ExtResource("4_u48er")
+text = "Blendshaps"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="SettingsPanel/InstanceSettingsContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -98.5
+offset_top = 315.0
+offset_right = 98.5
+offset_bottom = 343.0
+grow_horizontal = 2
+theme = ExtResource("4_u48er")
+text = "Hierarchy"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="SettingsPanel/InstanceSettingsContainer"]
+layout_mode = 0
+offset_top = 28.0
+offset_right = 197.0
+offset_bottom = 33.0
+theme = ExtResource("4_u48er")
+
+[node name="HSeparator2" type="HSeparator" parent="SettingsPanel/InstanceSettingsContainer"]
+layout_mode = 0
+offset_top = 75.0
+offset_right = 197.0
+offset_bottom = 80.0
+theme = ExtResource("4_u48er")
+
+[node name="HSeparator3" type="HSeparator" parent="SettingsPanel/InstanceSettingsContainer"]
+layout_mode = 0
+offset_top = 174.0
+offset_right = 197.0
+offset_bottom = 179.0
+theme = ExtResource("4_u48er")
+
+[node name="HSeparator4" type="HSeparator" parent="SettingsPanel/InstanceSettingsContainer"]
+layout_mode = 0
+offset_top = 310.0
+offset_right = 197.0
+offset_bottom = 315.0
+theme = ExtResource("4_u48er")
+
+[node name="Tree" type="Tree" parent="SettingsPanel/InstanceSettingsContainer"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 108.0
+offset_right = 194.0
+offset_bottom = 166.0
+theme = ExtResource("4_u48er")
+hide_root = true
+
+[node name="Tree2" type="Tree" parent="SettingsPanel/InstanceSettingsContainer"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 207.0
+offset_right = 194.0
+offset_bottom = 301.0
+theme = ExtResource("4_u48er")
+hide_root = true
+
+[node name="Tree3" type="Tree" parent="SettingsPanel/InstanceSettingsContainer"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 343.0
+offset_right = 194.0
+offset_bottom = 412.0
+theme = ExtResource("4_u48er")
+hide_root = true
 
 [node name="WorldSettingsContainer" type="Control" parent="SettingsPanel"]
 clip_contents = true
@@ -145,12 +433,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -56.5
-offset_top = -50.5
+offset_left = -51.5
+offset_top = -52.0
 offset_right = 95.5
-offset_bottom = -34.5
+offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("4_u48er")
 min_value = -5.0
 max_value = 5.0
 step = 0.0
@@ -164,12 +453,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -56.5
+offset_left = -51.5
 offset_top = -72.5
 offset_right = 95.5
 offset_bottom = -56.5
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("4_u48er")
 min_value = -5.0
 max_value = 5.0
 step = 0.0
@@ -183,12 +473,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -56.5
-offset_top = -28.5
+offset_left = -51.5
+offset_top = -25.0
 offset_right = 95.5
-offset_bottom = -12.5
+offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("4_u48er")
 max_value = 2.0
 step = 0.0
 value = 0.897
@@ -199,9 +490,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -53.5
-offset_right = 41.0
-offset_bottom = -33.5
+offset_left = 4.0
+offset_top = -55.0
+offset_right = 45.0
+offset_bottom = -35.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 14
 text = "Y-Axis"
@@ -212,9 +504,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -28.5
-offset_right = 41.0
-offset_bottom = -8.5
+offset_left = 4.0
+offset_top = -28.0
+offset_right = 45.0
+offset_bottom = -8.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 14
 text = "Light"
@@ -226,9 +519,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -74.5
-offset_right = 41.0
-offset_bottom = -54.5
+offset_left = 4.0
+offset_top = -75.0
+offset_right = 45.0
+offset_bottom = -55.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 14
 text = "X-Axis"
@@ -255,6 +549,7 @@ offset_top = -26.0
 offset_right = 198.0
 offset_bottom = -21.0
 grow_vertical = 2
+theme = ExtResource("4_u48er")
 
 [node name="HSeparator2" type="HSeparator" parent="SettingsPanel/WorldSettingsContainer/WorldLight"]
 z_index = 1
@@ -266,6 +561,7 @@ offset_top = 20.5
 offset_right = 198.0
 offset_bottom = 25.5
 grow_vertical = 2
+theme = ExtResource("4_u48er")
 
 [node name="HSeparator3" type="HSeparator" parent="SettingsPanel/WorldSettingsContainer/WorldLight"]
 z_index = 1
@@ -277,8 +573,243 @@ offset_top = 46.0
 offset_right = 198.0
 offset_bottom = 51.0
 grow_vertical = 2
+theme = ExtResource("4_u48er")
+
+[node name="CurrentCamera" type="Control" parent="SettingsPanel/WorldSettingsContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 105.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -99.0
+offset_right = 99.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Camera"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -99.0
+offset_top = 146.0
+offset_right = 99.0
+offset_bottom = 163.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 12
+text = "Projection"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -99.0
+offset_top = 28.0
+offset_right = 99.0
+offset_bottom = 32.0
+grow_horizontal = 2
+theme = ExtResource("4_u48er")
+
+[node name="HSeparator3" type="HSeparator" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -99.0
+offset_top = 142.0
+offset_right = 99.0
+offset_bottom = 146.0
+grow_horizontal = 2
+theme = ExtResource("4_u48er")
+
+[node name="FOVSlider" type="HSlider" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+z_index = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -283.0
+offset_right = 95.0
+offset_bottom = -267.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_u48er")
+min_value = 20.0
+max_value = 130.0
+value = 20.0
+
+[node name="Label5" type="Label" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -285.0
+offset_right = 41.0
+offset_bottom = -265.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 14
+text = "Fov"
+horizontal_alignment = 1
+
+[node name="HSeparator5" type="HSeparator" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -99.0
+offset_top = 106.0
+offset_right = 99.0
+offset_bottom = 110.0
+grow_horizontal = 2
+theme = ExtResource("4_u48er")
+
+[node name="FarSlider" type="HSlider" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+z_index = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -260.0
+offset_right = 95.0
+offset_bottom = -244.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_u48er")
+min_value = 0.1
+max_value = 4000.0
+step = 0.0
+value = 4000.0
+
+[node name="Label6" type="Label" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -262.0
+offset_right = 41.0
+offset_bottom = -242.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 14
+text = "Far"
+horizontal_alignment = 1
+
+[node name="NearSlider" type="HSlider" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+z_index = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -237.0
+offset_right = 95.0
+offset_bottom = -221.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_u48er")
+min_value = 0.01
+max_value = 10.0
+step = 0.0
+value = 0.05
+
+[node name="Label7" type="Label" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 3.5
+offset_top = -239.0
+offset_right = 37.5
+offset_bottom = -219.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 14
+text = "Near"
+horizontal_alignment = 1
+
+[node name="ResetPosButton" type="Button" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -92.0
+offset_top = 116.0
+offset_right = -5.0
+offset_bottom = 137.0
+grow_horizontal = 2
+theme = ExtResource("4_u48er")
+theme_override_font_sizes/font_size = 12
+text = "Reset Position"
+
+[node name="ReturnToPivitButton" type="Button" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 2.0
+offset_top = 116.0
+offset_right = 92.0
+offset_bottom = 137.0
+grow_horizontal = 2
+theme = ExtResource("4_u48er")
+theme_override_font_sizes/font_size = 12
+text = "FlyMode"
+
+[node name="HSeparator4" type="HSeparator" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -99.0
+offset_top = 196.0
+offset_right = 99.0
+offset_bottom = 200.0
+grow_horizontal = 2
+theme = ExtResource("4_u48er")
+
+[node name="ProjectOption" type="OptionButton" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 165.0
+offset_right = 191.0
+offset_bottom = 189.0
+theme = ExtResource("4_u48er")
+alignment = 1
+selected = 0
+item_count = 3
+popup/item_0/text = "Perspective"
+popup/item_0/id = 0
+popup/item_1/text = "Orthogonal"
+popup/item_1/id = 1
+popup/item_2/text = "Frustum"
+popup/item_2/id = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_v5pbv")
+&"": SubResource("AnimationLibrary_vw2im")
 }

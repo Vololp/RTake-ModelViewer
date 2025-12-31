@@ -16,4 +16,8 @@ static func CameraYposMotion(Delta:float) -> void:
 ## This function will smoothly zoom the camera on the x-axis.
 static func CameraZposMotion(Delta:float) -> void:
 	if VariantManager.CurrentCamera.global_position.z != VariantManager.ZPos:
-		VariantManager.CurrentCamera.position.z = lerpf(VariantManager.CurrentCamera.position.z,VariantManager.ZPos,5*Delta)
+		match VariantManager.CurrentCamera.projection:
+			0:
+				VariantManager.CurrentCamera.position.z = lerpf(VariantManager.CurrentCamera.position.z,VariantManager.ZPos,9*Delta)
+			1:
+				VariantManager.CurrentCamera.size = lerpf(VariantManager.CurrentCamera.size,VariantManager.ZPos,5*Delta)

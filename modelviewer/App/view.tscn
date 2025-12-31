@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bufu7yyu6rw6c"]
+[gd_scene load_steps=7 format=3 uid="uid://bg2caco8qhuw4"]
 
-[ext_resource type="Shader" uid="uid://56fm0r0oy1x1" path="res://App/Shader/Grid.gdshader" id="1_sgxec"]
+[ext_resource type="Shader" uid="uid://56fm0r0oy1x1" path="res://App/Shader/grid.gdshader" id="1_sgxec"]
 [ext_resource type="Script" uid="uid://cncb3r1jxt727" path="res://Scripts/Main.gd" id="1_uj36f"]
 [ext_resource type="Environment" uid="uid://bhkti3gn6dxiw" path="res://App/environment.tres" id="2_uj36f"]
+[ext_resource type="Script" uid="uid://bqehayvvtg7hh" path="res://Scripts/CameraControl.gd" id="4_q0ee7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q0ee7"]
 render_priority = 0
@@ -52,6 +53,8 @@ transform = Transform3D(1, 0, 0, 0, 0.9720594, 0.23473495, 0, -0.23473495, 0.972
 [node name="Camera3D" type="Camera3D" parent="_Stuffs_/Pivit/Pivit2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.000001)
 environment = ExtResource("2_uj36f")
+current = true
+script = ExtResource("4_q0ee7")
 
 [node name="Timer" type="Timer" parent="_Stuffs_"]
 wait_time = 1.5

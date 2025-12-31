@@ -10,6 +10,8 @@ static func LoadFBX(Path:String) -> void:
 		UI_MANAGER.RemoveButton()
 		VariantManager.Storage.add_child.call_deferred(Instance)
 		UI_MANAGER.DisableButton(false)
+		VariantManager.InstanceModel = Instance
+		Ui.find_child("InstanceSize").value = 1
 		print("fbx model")
 	else :
 		DEBUGGING_MANAGER.ErrorMessage(str("Importing Failed! | ",Path))
@@ -24,6 +26,8 @@ static func LoadGLB(Path:String) -> void:
 		UI_MANAGER.RemoveButton()
 		VariantManager.Storage.add_child.call_deferred(Instance)
 		UI_MANAGER.DisableButton(false)
+		VariantManager.InstanceModel = Instance
+		Ui.find_child("InstanceSize").value = 1
 		print("glb model")
 	else:
 		DEBUGGING_MANAGER.ErrorMessage(str("Importing Failed! | ",Path))

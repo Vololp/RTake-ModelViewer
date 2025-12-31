@@ -1,0 +1,218 @@
+[gd_resource type="Theme" load_steps=41 format=3 uid="uid://c6pd0gfshfxu2"]
+
+[ext_resource type="StyleBox" uid="uid://cdb3d6q5rrjao" path="res://Theme/Styles/UI_Frame_Disable.tres" id="1_x73qb"]
+[ext_resource type="StyleBox" uid="uid://j357eerjc2kg" path="res://Theme/Styles/UI_Frame_Normal.tres" id="2_h47k2"]
+[ext_resource type="StyleBox" uid="uid://diqrpxmvkbyjq" path="res://Theme/Styles/UI_Frame_Clicked.tres" id="3_h47k2"]
+[ext_resource type="StyleBox" uid="uid://cirjq5bnja302" path="res://Theme/Styles/UI_Frame_Hover.tres" id="3_luthc"]
+[ext_resource type="StyleBox" uid="uid://dxphfuhbyksmg" path="res://Theme/Styles/UI_Line_Light.tres" id="5_74xco"]
+[ext_resource type="Texture2D" uid="uid://c6kdus8013awk" path="res://Theme/Icons/TailMarker.svg" id="5_ii5y2"]
+[ext_resource type="StyleBox" uid="uid://cs0e64ihxlody" path="res://Theme/Styles/UI_Frame_Panel.tres" id="5_ss7n5"]
+[ext_resource type="StyleBox" uid="uid://ckxes8dvnm26o" path="res://Theme/Styles/UI_Line_Highlight.tres" id="6_0kfne"]
+[ext_resource type="StyleBox" uid="uid://ckrak8vualh68" path="res://Theme/Styles/UI_FileWin_UnFocus.tres" id="6_k6o3x"]
+[ext_resource type="StyleBox" uid="uid://lk070626bxln" path="res://Theme/Styles/UI_Line_Normal.tres" id="7_74xco"]
+[ext_resource type="Texture2D" uid="uid://cn5k3dawic4wk" path="res://Theme/Icons/Tree_Arrow.svg" id="9_7mrnr"]
+[ext_resource type="Texture2D" uid="uid://dpjquidyvcypg" path="res://Theme/Icons/Slected.svg" id="11_oux4o"]
+[ext_resource type="Texture2D" uid="uid://btksukb5f6ha2" path="res://Theme/Icons/Unslected.svg" id="12_7883s"]
+[ext_resource type="StyleBox" uid="uid://p8octf2vvge7" path="res://Theme/Styles/UI_PopUp_Hover.tres" id="13_7883s"]
+[ext_resource type="StyleBox" uid="uid://lptgiprqewvm" path="res://Theme/Styles/UI_TextEdit_Hover.tres" id="15_k6o3x"]
+[ext_resource type="StyleBox" uid="uid://cj3tv258qrq4a" path="res://Theme/Styles/UI_TextEdit_Normal.tres" id="15_uucgx"]
+[ext_resource type="StyleBox" uid="uid://cclaf8b6avt66" path="res://Theme/Styles/UI_Frame_Fill.tres" id="15_va7tb"]
+[ext_resource type="Texture2D" uid="uid://ckts8n45ntj2p" path="res://Theme/Icons/Tree_ArrowRight.svg" id="17_gf57y"]
+[ext_resource type="StyleBox" uid="uid://1wbbecv8elhr" path="res://Theme/Styles/UI_Panel_Normal.tres" id="18_va7tb"]
+
+[sub_resource type="DPITexture" id="DPITexture_k6o3x"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"none\" stroke=\"#b2b2b2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-opacity=\".45\" stroke-width=\"2\" d=\"m9 11-3-3 3-3\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_irg5v"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"#e0e0e0\" d=\"m8 1a1 1 0 0 0 -1 1v5h-2c-1.108 0-2 .892-2 2v1h10v-1c0-1.108-.892-2-2-2h-2v-5a1 1 0 0 0 -1-1zm-5 10v4l10-1v-3z\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_gf57y"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"#b2b2b2\" d=\"M2 3a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h8v-1H8v-4h2V8h4v2h1V7a1 1 0 0 0-1-1h-4a1 1 0 0 1-1-1V4a1 1 0 0 0-1-1Z\"/><path fill=\"#fefffe\" d=\"M13 13h2v-2h-2V9h-2v2H9v2h2v2h2z\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_va7tb"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"#e0e0e0\" d=\"M8 1.7 5.626 5.797 1 6.895l3.236 3.408-.359 4.673 4.14-1.977 4.157 1.942-.396-4.653L15 6.895l-4.626-1.098z\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_hgbne"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"none\" stroke=\"#e0e0e0\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M10 2H6m2 4v8M4 9l4 5 4-5\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_7w4ei"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"none\" stroke=\"#e0e0e0\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M6 14h4m-2-4V2m4 5L8 2 4 7\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_7haya"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"#b2b2b2\" d=\"M2 1v14h12V6H9V1zm8 0v4h4z\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_bsf4e"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"64\" height=\"64\"><path fill=\"#fff\" fill-opacity=\".6\" d=\"M14 5a4 4 0 0 0-4 4v46a4 4 0 0 0 4 4h36a4 4 0 0 0 4-4V22a1 1 0 0 0-.29-.707l-16-16a1 1 0 0 0-.707-.29V5H14zm0 2h22v12a4 4 0 0 0 4 4h12v32a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_ufxif"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"#b2b2b2\" d=\"M2 2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-4a1 1 0 0 1-1-1V3a1 1 0 0 0-1-1z\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_de2yy"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"64\" height=\"64\"><path fill=\"#e0e0e0\" d=\"M12 10a4 4 0 0 0-4 4v36a4 4 0 0 0 4 4h40a4 4 0 0 0 4-4V22a4 4 0 0 0-4-4H36l-2-4c-1-2-2-4-4-4z\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_a85xg"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"none\" stroke=\"#b2b2b2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-opacity=\".45\" stroke-width=\"2\" d=\"m6 11 3-3-3-3\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_5wkao"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"#e0e0e0\" d=\"m2 2v2h2v-2zm4 0v2h8v-2zm-4 5v2h2v-2zm4 0v2h8v-2zm-4 5v2h2v-2zm4 0v2h8v-2z\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_xyfcm"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"#e0e0e0\" d=\"M3 2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9c1.105 0 1.818-.91 2-2l1-6a1 1 0 0 0-1-1H6c-.552 0-.909.455-1 1l-1 6c-.091.545-.448 1-1 1a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1 1 1 0 0 0 1 1h5a1 1 0 0 0-1-1H7a2 2 0 0 0-2-2H3z\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_66guw"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"none\" stroke=\"#b2b2b2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M8 11V4m4 4L8 4 4 8\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_dr3ci"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"#b2b2b2\" d=\"M5 8a4 4 0 1 1 4 4v2a6 6 0 1 0-6-6H1l3 4 3-4z\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_xx4wy"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"#e0e0e0\" d=\"M3 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4l-3-3h-1v6H3zm1 0v5h3V1zm4 8a1 1 0 0 1 0 4 1 1 0 0 1 0-4z\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_pq0y6"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"#e0e0e0\" d=\"M9 1v2h6V1zM4 1a1 1 0 0 0-.691.291l-2 2a1 1 0 0 0 1.414 1.414l.293-.293v7.172l-.293-.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l2-2a1 1 0 0 0-1.414-1.414l-.293.293V4.412l.293.293a1 1 0 0 0 1.414-1.414l-2-2A1 1 0 0 0 4 1zm5 6v2h4V7zm0 6v2h2v-2z\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_xmkw6"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"#e0e0e0\" d=\"m2 2v5h5v-5zm7 0v5h5v-5zm-7 7v5h5v-5zm7 0v5h5v-5z\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_vwx7p"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><g fill=\"#e0e0e0\"><path d=\"m13.297.714h-13.013a.454.454 0 0 0 -.318.779l4.615 4.507v7.086a.45.45 0 0 0 .738.354l3.511-2.812a.454.454 0 0 0 .17-.354v-4.274l4.614-4.506a.454.454 0 0 0 -.317-.779z\"/><path d=\"m11.085832 14.18196c3.399443 1.97457 6.855925-2.441094 4.074102-5.1815164-2.781825-2.7404217-7.2642008.6646174-5.2597994 4.0134654l-1.9001346 1.871854 1.1856973 1.168051zm1.699723-4.4945981c2.236109 0 2.236109 3.3042441 0 3.3042441-2.236108 0-2.236108-3.3042441 0-3.3042441z\"/></g></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_fi5wp"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"#b2b2b2\" d=\"M8 2C5.443 2 2.209 3.948 1.045 7.705a1 1 0 0 0 0 .55C2.163 12.211 5.5 14 8 14s5.836-1.789 6.961-5.725a1 1 0 0 0 0-.55C13.861 3.935 10.554 2 8 2zm0 2a4 4 0 0 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 0 0 0 4 2 2 0 0 0 0-4z\"/></svg>
+"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hgbne"]
+
+[resource]
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/styles/disabled = ExtResource("1_x73qb")
+Button/styles/focus = ExtResource("2_h47k2")
+Button/styles/hover = ExtResource("3_luthc")
+Button/styles/normal = ExtResource("2_h47k2")
+Button/styles/pressed = ExtResource("3_h47k2")
+FileDialog/colors/file_disabled_color = Color(1, 1, 1, 0.25)
+FileDialog/colors/file_icon_color = Color(1, 1, 1, 1)
+FileDialog/colors/folder_icon_color = Color(1, 1, 1, 1)
+FileDialog/constants/buttons_min_height = 15
+FileDialog/constants/buttons_min_width = 73
+FileDialog/constants/buttons_separation = 2
+FileDialog/constants/thumbnail_size = 46
+FileDialog/icons/back_folder = SubResource("DPITexture_k6o3x")
+FileDialog/icons/clear = SubResource("DPITexture_irg5v")
+FileDialog/icons/create_folder = SubResource("DPITexture_gf57y")
+FileDialog/icons/favorite = SubResource("DPITexture_va7tb")
+FileDialog/icons/favorite_down = SubResource("DPITexture_hgbne")
+FileDialog/icons/favorite_up = SubResource("DPITexture_7w4ei")
+FileDialog/icons/file = SubResource("DPITexture_7haya")
+FileDialog/icons/file_thumbnail = SubResource("DPITexture_bsf4e")
+FileDialog/icons/folder = SubResource("DPITexture_ufxif")
+FileDialog/icons/folder_thumbnail = SubResource("DPITexture_de2yy")
+FileDialog/icons/forward_folder = SubResource("DPITexture_a85xg")
+FileDialog/icons/list_mode = SubResource("DPITexture_5wkao")
+FileDialog/icons/load = SubResource("DPITexture_xyfcm")
+FileDialog/icons/parent_folder = SubResource("DPITexture_66guw")
+FileDialog/icons/reload = SubResource("DPITexture_dr3ci")
+FileDialog/icons/save = SubResource("DPITexture_xx4wy")
+FileDialog/icons/sort = SubResource("DPITexture_pq0y6")
+FileDialog/icons/thumbnail_mode = SubResource("DPITexture_xmkw6")
+FileDialog/icons/toggle_filename_filter = SubResource("DPITexture_vwx7p")
+FileDialog/icons/toggle_hidden = SubResource("DPITexture_fi5wp")
+FileDialog/styles/embedded_unfocused_border = ExtResource("6_k6o3x")
+FileDialog/styles/panel = ExtResource("5_ss7n5")
+HSeparator/styles/separator = ExtResource("5_74xco")
+HSlider/icons/grabber = ExtResource("5_ii5y2")
+HSlider/icons/grabber_disabled = ExtResource("5_ii5y2")
+HSlider/icons/grabber_highlight = ExtResource("5_ii5y2")
+HSlider/styles/grabber_area = ExtResource("6_0kfne")
+HSlider/styles/grabber_area_highlight = ExtResource("6_0kfne")
+HSlider/styles/slider = ExtResource("7_74xco")
+LineEdit/font_sizes/font_size = 15
+LineEdit/styles/focus = ExtResource("3_luthc")
+LineEdit/styles/normal = ExtResource("2_h47k2")
+LineEdit/styles/read_only = ExtResource("1_x73qb")
+OptionButton/constants/arrow_margin = 15
+OptionButton/constants/modulate_arrow = 7
+OptionButton/icons/arrow = ExtResource("9_7mrnr")
+OptionButton/styles/disabled = ExtResource("1_x73qb")
+OptionButton/styles/disabled_mirrored = ExtResource("1_x73qb")
+OptionButton/styles/focus = ExtResource("2_h47k2")
+OptionButton/styles/hover = ExtResource("3_luthc")
+OptionButton/styles/hover_pressed = ExtResource("3_h47k2")
+OptionButton/styles/hover_pressed_mirrored = ExtResource("3_luthc")
+OptionButton/styles/normal = ExtResource("2_h47k2")
+OptionButton/styles/normal_mirrored = ExtResource("2_h47k2")
+OptionButton/styles/pressed = ExtResource("3_h47k2")
+OptionButton/styles/pressed_mirrored = ExtResource("3_h47k2")
+Panel/styles/panel = ExtResource("5_ss7n5")
+PopupMenu/constants/h_separation = 3
+PopupMenu/constants/item_end_padding = 15
+PopupMenu/constants/item_start_padding = 2
+PopupMenu/icons/radio_checked = ExtResource("11_oux4o")
+PopupMenu/icons/radio_checked_disabled = ExtResource("11_oux4o")
+PopupMenu/icons/radio_unchecked = ExtResource("12_7883s")
+PopupMenu/icons/radio_unchecked_disabled = ExtResource("12_7883s")
+PopupMenu/styles/embedded_border = ExtResource("5_ss7n5")
+PopupMenu/styles/embedded_unfocused_border = ExtResource("5_ss7n5")
+PopupMenu/styles/hover = ExtResource("13_7883s")
+PopupMenu/styles/labeled_separator_left = ExtResource("5_74xco")
+PopupMenu/styles/labeled_separator_right = ExtResource("5_74xco")
+PopupMenu/styles/panel = ExtResource("5_ss7n5")
+PopupMenu/styles/separator = ExtResource("6_0kfne")
+PopupPanel/styles/panel = ExtResource("5_ss7n5")
+ProgressBar/styles/background = ExtResource("2_h47k2")
+ProgressBar/styles/fill = ExtResource("15_va7tb")
+TextEdit/styles/focus = ExtResource("15_k6o3x")
+TextEdit/styles/normal = ExtResource("15_uucgx")
+TextEdit/styles/read_only = ExtResource("1_x73qb")
+Tree/constants/button_margin = 2
+Tree/constants/children_hl_line_width = 6
+Tree/constants/draw_guides = 5
+Tree/constants/draw_relationship_lines = 1
+Tree/constants/h_separation = 20
+Tree/constants/inner_item_margin_bottom = 2
+Tree/constants/item_margin = 14
+Tree/constants/parent_hl_line_margin = 9
+Tree/constants/scroll_border = 1
+Tree/constants/scrollbar_h_separation = 3
+Tree/constants/v_separation = -1
+Tree/font_sizes/font_size = 15
+Tree/icons/arrow = ExtResource("9_7mrnr")
+Tree/icons/arrow_collapsed = ExtResource("17_gf57y")
+Tree/icons/arrow_collapsed_mirrored = ExtResource("17_gf57y")
+Tree/icons/checked = ExtResource("11_oux4o")
+Tree/icons/checked_disabled = ExtResource("11_oux4o")
+Tree/icons/indeterminate = ExtResource("12_7883s")
+Tree/icons/indeterminate_disabled = ExtResource("12_7883s")
+Tree/icons/select_arrow = ExtResource("9_7mrnr")
+Tree/icons/unchecked = ExtResource("12_7883s")
+Tree/icons/unchecked_disabled = ExtResource("12_7883s")
+Tree/styles/button_hover = ExtResource("3_luthc")
+Tree/styles/button_pressed = ExtResource("3_h47k2")
+Tree/styles/focus = SubResource("StyleBoxEmpty_hgbne")
+Tree/styles/hovered = ExtResource("3_luthc")
+Tree/styles/panel = ExtResource("18_va7tb")
+Tree/styles/selected = ExtResource("5_ss7n5")
+Tree/styles/selected_focus = ExtResource("3_h47k2")
+Tree/styles/title_button_hover = ExtResource("3_luthc")
+Tree/styles/title_button_normal = ExtResource("1_x73qb")
+Tree/styles/title_button_pressed = ExtResource("3_h47k2")

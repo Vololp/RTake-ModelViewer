@@ -1,13 +1,16 @@
 [gd_scene load_steps=2 format=3 uid="uid://dcc1twjqvgo7p"]
 
-[ext_resource type="Theme" uid="uid://cmaf4w1ii8f0o" path="res://App/Theme/UI_Theme_LeftSide.tres" id="1_0pddw"]
+[ext_resource type="Theme" uid="uid://c6pd0gfshfxu2" path="res://Theme/UI_Theme_Normal.tres" id="1_0pddw"]
 
 [node name="FileDialog" type="FileDialog"]
 oversampling_override = 1.0
 title = "Load a Model"
 initial_position = 1
-size = Vector2i(800, 500)
-max_size = Vector2i(900, 900)
+size = Vector2i(900, 500)
+transient = false
+unresizable = true
+min_size = Vector2i(900, 500)
+max_size = Vector2i(900, 500)
 theme = ExtResource("1_0pddw")
 ok_button_text = "Load"
 dialog_close_on_escape = false
@@ -20,6 +23,4 @@ hidden_files_toggle_enabled = false
 file_filter_toggle_enabled = false
 file_sort_options_enabled = false
 folder_creation_enabled = false
-favorites_enabled = false
-recent_list_enabled = false
 layout_toggle_enabled = false
