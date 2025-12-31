@@ -1,4 +1,4 @@
-     <img width="94" height="94" alt="ModelViewIcon94" src="https://github.com/user-attachments/assets/d857ce6f-b41b-498f-bc8c-1e937418a821" />
+<img width="94" height="94" alt="ModelViewIcon94" src="https://github.com/user-attachments/assets/d857ce6f-b41b-498f-bc8c-1e937418a821" />
  
 
 A simple app where you can view models.
