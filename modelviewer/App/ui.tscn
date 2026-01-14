@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dnrappxi8rx81"]
+[gd_scene format=3 uid="uid://dnrappxi8rx81"]
 
 [ext_resource type="StyleBox" uid="uid://cs0e64ihxlody" path="res://Theme/Styles/UI_Frame_Panel.tres" id="2_cl8b6"]
 [ext_resource type="Texture2D" uid="uid://cctjes464pobx" path="res://Theme/Icons/SettingsGearIcon.png" id="3_heedv"]
@@ -104,6 +104,70 @@ shader_parameter/edge_highlight = Color(1, 1, 1, 0.3)
 shader_parameter/edge_width = 1.06
 shader_parameter/chromatic_strength = 0.0
 
+[sub_resource type="Animation" id="Animation_vw2im"]
+resource_name = "Open_HelpPanel"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anchor_Pivot/HelpBackground:size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(68, 29), Vector2(334, 319)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Anchor_Pivot/HelpBackground:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1078, 5), Vector2(812, 5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Anchor_Pivot/HelpBackground/Control/Label:visible_ratio")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Anchor_Pivot/HelpBackground/CloseHelpButton:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(315.135, 6), Vector2(306, 6)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Anchor_Pivot/HelpBackground/HelpButton:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(6, 0), Vector2(6, 330.335)]
+}
+
 [sub_resource type="Animation" id="Animation_u48er"]
 resource_name = "Open_SettingsPanel"
 length = 0.3
@@ -134,14 +198,75 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(-198, 39)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Anchor_Pivot/HelpBackground/Control/Label:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Anchor_Pivot/HelpBackground:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(68, 29)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Anchor_Pivot/HelpBackground:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1078, 5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Anchor_Pivot/HelpBackground/HelpButton:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Anchor_Pivot/HelpBackground/CloseHelpButton:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(306, 6)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vw2im"]
 _data = {
+&"Open_HelpPanel": SubResource("Animation_vw2im"),
 &"Open_SettingsPanel": SubResource("Animation_u48er"),
 &"RESET": SubResource("Animation_v5pbv")
 }
 
-[node name="UI" type="Control"]
+[node name="UI" type="Control" unique_id=624984382]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -151,7 +276,18 @@ offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ErrorBox" type="LineEdit" parent="."]
+[node name="SpeedLabel" type="Label" parent="." unique_id=631577866]
+visible = false
+layout_mode = 1
+offset_left = 249.0
+offset_top = 5.0
+offset_right = 303.0
+offset_bottom = 34.0
+mouse_behavior_recursive = 1
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ErrorBox" type="LineEdit" parent="." unique_id=1309045858]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
@@ -164,7 +300,7 @@ theme = SubResource("Theme_y33m6")
 editable = false
 flat = true
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=2138477697]
 material = SubResource("ShaderMaterial_cl8b6")
 layout_mode = 0
 offset_left = 5.0
@@ -172,7 +308,87 @@ offset_top = 5.0
 offset_right = 246.0
 offset_bottom = 34.0
 
-[node name="LoadButton" type="Button" parent="."]
+[node name="Anchor_Pivot" type="Control" parent="." unique_id=1933531224]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1152.0
+offset_bottom = 648.0
+grow_horizontal = 0
+
+[node name="HelpBackground" type="ColorRect" parent="Anchor_Pivot" unique_id=1427044718]
+material = SubResource("ShaderMaterial_cl8b6")
+clip_contents = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -74.0
+offset_top = 5.0
+offset_right = -6.0
+offset_bottom = 34.0
+grow_horizontal = 0
+
+[node name="Control" type="Control" parent="Anchor_Pivot/HelpBackground" unique_id=1949188894]
+layout_direction = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -68.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Anchor_Pivot/HelpBackground/Control" unique_id=267328774]
+layout_mode = 1
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 301.0
+offset_bottom = 279.0
+theme_override_font_sizes/font_size = 14
+text = "                               > Controls <
+   Right Mouse Button : to pivit the camera.
+
+   Scroll in & out : to zoom closer or far 
+                                from the model.
+
+   R Key : is to remove the model.
+
+   L Key : is to load a model.
+
+    M Key : is to change camera modes
+                  (Orbit,Freecam)."
+
+[node name="CloseHelpButton" type="Button" parent="Anchor_Pivot/HelpBackground" unique_id=1620406405]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 238.0
+offset_top = 6.0
+offset_right = 261.0
+offset_bottom = 29.0
+grow_horizontal = 0
+theme = ExtResource("4_u48er")
+text = "X"
+
+[node name="HelpButton" type="Button" parent="Anchor_Pivot/HelpBackground" unique_id=887477869]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -29.0
+offset_right = 63.0
+offset_bottom = -5.9999275
+grow_vertical = 0
+theme = ExtResource("4_u48er")
+text = "Help"
+flat = true
+
+[node name="LoadButton" type="Button" parent="." unique_id=1252770748]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 5.0
@@ -185,7 +401,7 @@ toggle_mode = true
 text = "Load Model"
 flat = true
 
-[node name="RemoveButton" type="Button" parent="."]
+[node name="RemoveButton" type="Button" parent="." unique_id=679378830]
 layout_mode = 1
 anchors_preset = -1
 offset_left = 112.0
@@ -200,16 +416,16 @@ toggle_mode = true
 text = "Remove Model"
 flat = true
 
-[node name="SettingsPanel" type="Control" parent="."]
-clip_contents = true
+[node name="SettingsPanel" type="Control" parent="." unique_id=1245060534]
 layout_mode = 1
 anchors_preset = 0
 offset_left = -198.0
 offset_top = 39.0
 offset_right = 29.0
 offset_bottom = 465.0
+mouse_behavior_recursive = 2
 
-[node name="Settings_Button" type="Button" parent="SettingsPanel"]
+[node name="Settings_Button" type="Button" parent="SettingsPanel" unique_id=914808663]
 show_behind_parent = true
 z_index = 1
 material = SubResource("ShaderMaterial_v5pbv")
@@ -219,7 +435,8 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -28.0
+offset_left = -24.0
+offset_right = 4.0
 offset_bottom = 28.131264
 grow_horizontal = 0
 scale = Vector2(1, 0.99533373)
@@ -229,7 +446,7 @@ flat = true
 icon_alignment = 2
 expand_icon = true
 
-[node name="Button1 Background" type="ColorRect" parent="SettingsPanel/Settings_Button"]
+[node name="Button1 Background" type="ColorRect" parent="SettingsPanel/Settings_Button" unique_id=233767586]
 show_behind_parent = true
 z_index = -1
 material = SubResource("ShaderMaterial_ilqkl")
@@ -240,7 +457,7 @@ offset_bottom = 28.0
 mouse_filter = 2
 mouse_behavior_recursive = 1
 
-[node name="Instance_Button" type="Button" parent="SettingsPanel"]
+[node name="Instance_Button" type="Button" parent="SettingsPanel" unique_id=1537522174]
 z_index = 1
 material = SubResource("ShaderMaterial_v5pbv")
 use_parent_material = true
@@ -248,8 +465,9 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -28.0
+offset_left = -24.0
 offset_top = 33.0
+offset_right = 4.0
 offset_bottom = 61.131264
 grow_horizontal = 0
 scale = Vector2(1, 0.99533373)
@@ -259,7 +477,7 @@ flat = true
 icon_alignment = 2
 expand_icon = true
 
-[node name="Button2 Background" type="ColorRect" parent="SettingsPanel/Instance_Button"]
+[node name="Button2 Background" type="ColorRect" parent="SettingsPanel/Instance_Button" unique_id=709305387]
 z_index = -1
 material = SubResource("ShaderMaterial_ilqkl")
 layout_mode = 0
@@ -269,15 +487,14 @@ mouse_filter = 2
 mouse_behavior_recursive = 1
 mouse_force_pass_scroll_events = false
 
-[node name="Panel Background" type="ColorRect" parent="SettingsPanel"]
+[node name="Panel Background" type="ColorRect" parent="SettingsPanel" unique_id=1186677929]
 material = SubResource("ShaderMaterial_vw2im")
 layout_mode = 0
 offset_right = 197.0
 offset_bottom = 426.0
 color = Color(1, 1, 1, 0.76862746)
 
-[node name="InstanceSettingsContainer" type="Control" parent="SettingsPanel"]
-visible = false
+[node name="InstanceSettingsContainer" type="Control" parent="SettingsPanel" unique_id=1783831614]
 clip_contents = true
 layout_mode = 1
 anchors_preset = 15
@@ -287,7 +504,7 @@ offset_right = -30.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="SettingsPanel/InstanceSettingsContainer"]
+[node name="Label" type="Label" parent="SettingsPanel/InstanceSettingsContainer" unique_id=1838139632]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -300,7 +517,7 @@ theme = ExtResource("4_u48er")
 text = "Instance Settings"
 horizontal_alignment = 1
 
-[node name="InstanceSize" type="SpinBox" parent="SettingsPanel/InstanceSettingsContainer"]
+[node name="InstanceSize" type="SpinBox" parent="SettingsPanel/InstanceSettingsContainer" unique_id=1248309130]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 36.0
@@ -313,7 +530,7 @@ allow_greater = true
 allow_lesser = true
 prefix = "Size "
 
-[node name="Label2" type="Label" parent="SettingsPanel/InstanceSettingsContainer"]
+[node name="Label2" type="Label" parent="SettingsPanel/InstanceSettingsContainer" unique_id=2075569859]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -327,104 +544,78 @@ theme = ExtResource("4_u48er")
 text = "Materials"
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="SettingsPanel/InstanceSettingsContainer"]
+[node name="Label3" type="Label" parent="SettingsPanel/InstanceSettingsContainer" unique_id=2019125397]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -98.5
-offset_top = 179.0
+offset_top = 222.0
 offset_right = 98.5
-offset_bottom = 207.0
+offset_bottom = 250.0
 grow_horizontal = 2
 theme = ExtResource("4_u48er")
-text = "Blendshaps"
+text = "Blendshapes"
 horizontal_alignment = 1
 
-[node name="Label4" type="Label" parent="SettingsPanel/InstanceSettingsContainer"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -98.5
-offset_top = 315.0
-offset_right = 98.5
-offset_bottom = 343.0
-grow_horizontal = 2
-theme = ExtResource("4_u48er")
-text = "Hierarchy"
-horizontal_alignment = 1
-
-[node name="HSeparator" type="HSeparator" parent="SettingsPanel/InstanceSettingsContainer"]
+[node name="HSeparator" type="HSeparator" parent="SettingsPanel/InstanceSettingsContainer" unique_id=793970345]
 layout_mode = 0
 offset_top = 28.0
 offset_right = 197.0
 offset_bottom = 33.0
 theme = ExtResource("4_u48er")
 
-[node name="HSeparator2" type="HSeparator" parent="SettingsPanel/InstanceSettingsContainer"]
+[node name="HSeparator2" type="HSeparator" parent="SettingsPanel/InstanceSettingsContainer" unique_id=408057186]
 layout_mode = 0
 offset_top = 75.0
 offset_right = 197.0
 offset_bottom = 80.0
 theme = ExtResource("4_u48er")
 
-[node name="HSeparator3" type="HSeparator" parent="SettingsPanel/InstanceSettingsContainer"]
+[node name="HSeparator3" type="HSeparator" parent="SettingsPanel/InstanceSettingsContainer" unique_id=1177668951]
 layout_mode = 0
-offset_top = 174.0
+offset_top = 217.0
 offset_right = 197.0
-offset_bottom = 179.0
+offset_bottom = 222.0
 theme = ExtResource("4_u48er")
 
-[node name="HSeparator4" type="HSeparator" parent="SettingsPanel/InstanceSettingsContainer"]
-layout_mode = 0
-offset_top = 310.0
-offset_right = 197.0
-offset_bottom = 315.0
-theme = ExtResource("4_u48er")
-
-[node name="Tree" type="Tree" parent="SettingsPanel/InstanceSettingsContainer"]
+[node name="Tree" type="Tree" parent="SettingsPanel/InstanceSettingsContainer" unique_id=1594795309]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 108.0
 offset_right = 194.0
-offset_bottom = 166.0
+offset_bottom = 213.0
 theme = ExtResource("4_u48er")
 hide_root = true
 
-[node name="Tree2" type="Tree" parent="SettingsPanel/InstanceSettingsContainer"]
+[node name="Tree2" type="Tree" parent="SettingsPanel/InstanceSettingsContainer" unique_id=2077850350]
 layout_mode = 0
 offset_left = 4.0
-offset_top = 207.0
+offset_top = 251.0
 offset_right = 194.0
-offset_bottom = 301.0
+offset_bottom = 422.0
 theme = ExtResource("4_u48er")
+allow_reselect = true
+allow_search = false
 hide_root = true
+scroll_horizontal_enabled = false
 
-[node name="Tree3" type="Tree" parent="SettingsPanel/InstanceSettingsContainer"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 343.0
-offset_right = 194.0
-offset_bottom = 412.0
-theme = ExtResource("4_u48er")
-hide_root = true
-
-[node name="WorldSettingsContainer" type="Control" parent="SettingsPanel"]
+[node name="WorldSettingsContainer" type="Control" parent="SettingsPanel" unique_id=512961187]
+visible = false
 clip_contents = true
 layout_mode = 1
 anchor_right = 0.86800003
 anchor_bottom = 1.0
 offset_right = -0.036010742
 
-[node name="WorldLight" type="Control" parent="SettingsPanel/WorldSettingsContainer"]
+[node name="WorldLight" type="Control" parent="SettingsPanel/WorldSettingsContainer" unique_id=1936327584]
 z_index = 1
 clip_contents = true
 anchors_preset = 0
 offset_right = 197.0
 offset_bottom = 108.0
 
-[node name="YAxisSlider" type="HSlider" parent="SettingsPanel/WorldSettingsContainer/WorldLight"]
+[node name="YAxisSlider" type="HSlider" parent="SettingsPanel/WorldSettingsContainer/WorldLight" unique_id=1589622158]
 z_index = 1
 clip_contents = true
 layout_mode = 1
@@ -444,7 +635,7 @@ min_value = -5.0
 max_value = 5.0
 step = 0.0
 
-[node name="XAxisSlider" type="HSlider" parent="SettingsPanel/WorldSettingsContainer/WorldLight"]
+[node name="XAxisSlider" type="HSlider" parent="SettingsPanel/WorldSettingsContainer/WorldLight" unique_id=350323256]
 z_index = 1
 clip_contents = true
 layout_mode = 1
@@ -464,7 +655,7 @@ min_value = -5.0
 max_value = 5.0
 step = 0.0
 
-[node name="LightSlider" type="HSlider" parent="SettingsPanel/WorldSettingsContainer/WorldLight"]
+[node name="LightSlider" type="HSlider" parent="SettingsPanel/WorldSettingsContainer/WorldLight" unique_id=691002919]
 z_index = 1
 clip_contents = true
 layout_mode = 1
@@ -484,7 +675,7 @@ max_value = 2.0
 step = 0.0
 value = 0.897
 
-[node name="Label2" type="Label" parent="SettingsPanel/WorldSettingsContainer/WorldLight"]
+[node name="Label2" type="Label" parent="SettingsPanel/WorldSettingsContainer/WorldLight" unique_id=1762335222]
 z_index = 1
 layout_mode = 1
 anchors_preset = 2
@@ -498,7 +689,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 14
 text = "Y-Axis"
 
-[node name="Label4" type="Label" parent="SettingsPanel/WorldSettingsContainer/WorldLight"]
+[node name="Label4" type="Label" parent="SettingsPanel/WorldSettingsContainer/WorldLight" unique_id=1706314037]
 z_index = 1
 layout_mode = 1
 anchors_preset = 2
@@ -513,7 +704,7 @@ theme_override_font_sizes/font_size = 14
 text = "Light"
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="SettingsPanel/WorldSettingsContainer/WorldLight"]
+[node name="Label3" type="Label" parent="SettingsPanel/WorldSettingsContainer/WorldLight" unique_id=1909086453]
 z_index = 1
 layout_mode = 1
 anchors_preset = 2
@@ -527,7 +718,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 14
 text = "X-Axis"
 
-[node name="Label" type="Label" parent="SettingsPanel/WorldSettingsContainer/WorldLight"]
+[node name="Label" type="Label" parent="SettingsPanel/WorldSettingsContainer/WorldLight" unique_id=680459106]
 z_index = 1
 layout_mode = 1
 anchors_preset = 5
@@ -539,7 +730,7 @@ offset_bottom = 23.0
 grow_horizontal = 2
 text = "Direction Light"
 
-[node name="HSeparator" type="HSeparator" parent="SettingsPanel/WorldSettingsContainer/WorldLight"]
+[node name="HSeparator" type="HSeparator" parent="SettingsPanel/WorldSettingsContainer/WorldLight" unique_id=1491864359]
 z_index = 1
 layout_mode = 1
 anchors_preset = 4
@@ -551,7 +742,7 @@ offset_bottom = -21.0
 grow_vertical = 2
 theme = ExtResource("4_u48er")
 
-[node name="HSeparator2" type="HSeparator" parent="SettingsPanel/WorldSettingsContainer/WorldLight"]
+[node name="HSeparator2" type="HSeparator" parent="SettingsPanel/WorldSettingsContainer/WorldLight" unique_id=1131021388]
 z_index = 1
 layout_mode = 1
 anchors_preset = 4
@@ -563,7 +754,7 @@ offset_bottom = 25.5
 grow_vertical = 2
 theme = ExtResource("4_u48er")
 
-[node name="HSeparator3" type="HSeparator" parent="SettingsPanel/WorldSettingsContainer/WorldLight"]
+[node name="HSeparator3" type="HSeparator" parent="SettingsPanel/WorldSettingsContainer/WorldLight" unique_id=1235250828]
 z_index = 1
 layout_mode = 1
 anchors_preset = 4
@@ -575,7 +766,7 @@ offset_bottom = 51.0
 grow_vertical = 2
 theme = ExtResource("4_u48er")
 
-[node name="CurrentCamera" type="Control" parent="SettingsPanel/WorldSettingsContainer"]
+[node name="CurrentCamera" type="Control" parent="SettingsPanel/WorldSettingsContainer" unique_id=915836265]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -585,7 +776,7 @@ offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+[node name="Label" type="Label" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera" unique_id=103953068]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -597,7 +788,7 @@ grow_horizontal = 2
 text = "Camera"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+[node name="Label2" type="Label" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera" unique_id=2038858398]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -611,7 +802,7 @@ theme_override_font_sizes/font_size = 12
 text = "Projection"
 horizontal_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+[node name="HSeparator" type="HSeparator" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera" unique_id=1221965704]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -623,7 +814,7 @@ offset_bottom = 32.0
 grow_horizontal = 2
 theme = ExtResource("4_u48er")
 
-[node name="HSeparator3" type="HSeparator" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+[node name="HSeparator3" type="HSeparator" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera" unique_id=2047483538]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -635,7 +826,7 @@ offset_bottom = 146.0
 grow_horizontal = 2
 theme = ExtResource("4_u48er")
 
-[node name="FOVSlider" type="HSlider" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+[node name="FOVSlider" type="HSlider" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera" unique_id=1565323314]
 z_index = 1
 clip_contents = true
 layout_mode = 1
@@ -655,7 +846,7 @@ min_value = 20.0
 max_value = 130.0
 value = 20.0
 
-[node name="Label5" type="Label" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+[node name="Label5" type="Label" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera" unique_id=1934816115]
 z_index = 1
 layout_mode = 1
 anchors_preset = 2
@@ -669,7 +860,7 @@ theme_override_font_sizes/font_size = 14
 text = "Fov"
 horizontal_alignment = 1
 
-[node name="HSeparator5" type="HSeparator" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+[node name="HSeparator5" type="HSeparator" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera" unique_id=529292724]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -681,7 +872,7 @@ offset_bottom = 110.0
 grow_horizontal = 2
 theme = ExtResource("4_u48er")
 
-[node name="FarSlider" type="HSlider" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+[node name="FarSlider" type="HSlider" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera" unique_id=857510044]
 z_index = 1
 clip_contents = true
 layout_mode = 1
@@ -702,7 +893,7 @@ max_value = 4000.0
 step = 0.0
 value = 4000.0
 
-[node name="Label6" type="Label" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+[node name="Label6" type="Label" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera" unique_id=282426836]
 z_index = 1
 layout_mode = 1
 anchors_preset = 2
@@ -716,7 +907,7 @@ theme_override_font_sizes/font_size = 14
 text = "Far"
 horizontal_alignment = 1
 
-[node name="NearSlider" type="HSlider" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+[node name="NearSlider" type="HSlider" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera" unique_id=1094959142]
 z_index = 1
 clip_contents = true
 layout_mode = 1
@@ -737,7 +928,7 @@ max_value = 10.0
 step = 0.0
 value = 0.05
 
-[node name="Label7" type="Label" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+[node name="Label7" type="Label" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera" unique_id=1455536853]
 z_index = 1
 layout_mode = 1
 anchors_preset = 2
@@ -752,7 +943,7 @@ theme_override_font_sizes/font_size = 14
 text = "Near"
 horizontal_alignment = 1
 
-[node name="ResetPosButton" type="Button" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+[node name="ResetPosButton" type="Button" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera" unique_id=1622392474]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -766,7 +957,7 @@ theme = ExtResource("4_u48er")
 theme_override_font_sizes/font_size = 12
 text = "Reset Position"
 
-[node name="ReturnToPivitButton" type="Button" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+[node name="ReturnToPivitButton" type="Button" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera" unique_id=2129018905]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -780,7 +971,7 @@ theme = ExtResource("4_u48er")
 theme_override_font_sizes/font_size = 12
 text = "FlyMode"
 
-[node name="HSeparator4" type="HSeparator" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+[node name="HSeparator4" type="HSeparator" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera" unique_id=745415567]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -792,7 +983,7 @@ offset_bottom = 200.0
 grow_horizontal = 2
 theme = ExtResource("4_u48er")
 
-[node name="ProjectOption" type="OptionButton" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera"]
+[node name="ProjectOption" type="OptionButton" parent="SettingsPanel/WorldSettingsContainer/CurrentCamera" unique_id=1878505581]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 165.0
@@ -809,7 +1000,53 @@ popup/item_1/id = 1
 popup/item_2/text = "Frustum"
 popup/item_2/id = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_vw2im")
-}
+[node name="Graphics" type="Control" parent="SettingsPanel/WorldSettingsContainer" unique_id=1963257826]
+layout_mode = 1
+anchor_top = 0.716
+anchor_right = 1.005
+anchor_bottom = 1.0
+offset_top = -0.016021729
+offset_right = -0.9850006
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SettingsPanel/WorldSettingsContainer/Graphics" unique_id=748843272]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -98.5
+offset_right = 98.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Graphics"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="SettingsPanel/WorldSettingsContainer/Graphics" unique_id=1951315789]
+layout_mode = 0
+offset_top = 29.0
+offset_right = 197.0
+offset_bottom = 33.0
+theme = ExtResource("4_u48er")
+
+[node name="SSAOToggle" type="CheckBox" parent="SettingsPanel/WorldSettingsContainer/Graphics" unique_id=961653284]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 38.0
+offset_right = 94.0
+offset_bottom = 69.0
+theme = ExtResource("4_u48er")
+text = "SSAO"
+
+[node name="VOLUMEFOGToggle" type="CheckBox" parent="SettingsPanel/WorldSettingsContainer/Graphics" unique_id=187470758]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 78.0
+offset_right = 189.0
+offset_bottom = 109.0
+theme = ExtResource("4_u48er")
+text = "Volumetric Fog"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1395067777]
+deterministic = true
+libraries/ = SubResource("AnimationLibrary_vw2im")

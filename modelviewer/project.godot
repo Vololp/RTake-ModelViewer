@@ -16,9 +16,9 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="RTake-ModelViewer"
 run/main_scene="uid://bg2caco8qhuw4"
-config/features=PackedStringArray("4.5", "Mobile")
+config/features=PackedStringArray("4.6", "Mobile")
 boot_splash/show_image=false
-boot_splash/fullsize=false
+boot_splash/stretch_mode=0
 boot_splash/use_filter=false
 config/icon="uid://bdtv1g3usq2of"
 config/windows_native_icon="res://Theme/Icons/ModelViewIcon94.ico"
@@ -78,5 +78,6 @@ pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
-rendering_device/fallback_to_d3d12=false
+rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_s3tc_bptc=true
 textures/vram_compression/import_etc2_astc=true

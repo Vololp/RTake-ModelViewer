@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=41 format=3 uid="uid://c6pd0gfshfxu2"]
+[gd_resource type="Theme" format=3 uid="uid://c6pd0gfshfxu2"]
 
 [ext_resource type="StyleBox" uid="uid://cdb3d6q5rrjao" path="res://Theme/Styles/UI_Frame_Disable.tres" id="1_x73qb"]
 [ext_resource type="StyleBox" uid="uid://j357eerjc2kg" path="res://Theme/Styles/UI_Frame_Normal.tres" id="2_h47k2"]
@@ -110,6 +110,10 @@ Button/styles/focus = ExtResource("2_h47k2")
 Button/styles/hover = ExtResource("3_luthc")
 Button/styles/normal = ExtResource("2_h47k2")
 Button/styles/pressed = ExtResource("3_h47k2")
+CheckBox/icons/checked = ExtResource("11_oux4o")
+CheckBox/icons/checked_disabled = ExtResource("11_oux4o")
+CheckBox/icons/unchecked = ExtResource("12_7883s")
+CheckBox/icons/unchecked_disabled = ExtResource("12_7883s")
 FileDialog/colors/file_disabled_color = Color(1, 1, 1, 0.25)
 FileDialog/colors/file_icon_color = Color(1, 1, 1, 1)
 FileDialog/colors/folder_icon_color = Color(1, 1, 1, 1)

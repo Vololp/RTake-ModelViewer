@@ -21,22 +21,17 @@ shader_parameter/centerOffset = Vector3(0, 0, 0)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_j56db"]
 
-[node name="View" type="Node3D" node_paths=PackedStringArray("Pivit1", "Pivit2", "GetCamera", "Storage", "GetTimer", "WorldLight")]
+[node name="View" type="Node3D"]
 script = ExtResource("1_uj36f")
-Pivit1 = NodePath("_Stuffs_/Pivit")
-Pivit2 = NodePath("_Stuffs_/Pivit/Pivit2")
-GetCamera = NodePath("_Stuffs_/Pivit/Pivit2/Camera3D")
-Storage = NodePath("Storage")
-GetTimer = NodePath("_Stuffs_/Timer")
-WorldLight = NodePath("_Stuffs_/DirectionalLight3D")
 
 [node name="_Stuffs_" type="Node3D" parent="."]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="_Stuffs_"]
-transform = Transform3D(1, 0, 0, 0, 0.76604444, 0.6427876, 0, -0.6427876, 0.76604444, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.7660445, 0.64278764, 0, -0.64278764, 0.7660445, 0, 0, 0)
 light_energy = 0.897
-light_angular_distance = 5.1
 shadow_enabled = true
+shadow_normal_bias = 5.0
+directional_shadow_max_distance = 449.0
 
 [node name="Grid" type="MeshInstance3D" parent="_Stuffs_"]
 transform = Transform3D(15.991, 0, 0, 0, 15.991, 0, 0, 0, 15.991, 0, 0, 0)
@@ -45,12 +40,12 @@ material_override = SubResource("ShaderMaterial_q0ee7")
 mesh = SubResource("PlaneMesh_j56db")
 skeleton = NodePath("../..")
 
-[node name="Pivit" type="Node3D" parent="_Stuffs_"]
+[node name="Pivot" type="Node3D" parent="_Stuffs_"]
 transform = Transform3D(1, 0, 0, 0, 0.9720594, 0.23473495, 0, -0.23473495, 0.9720594, 0, 0.59052837, 0)
 
-[node name="Pivit2" type="Node3D" parent="_Stuffs_/Pivit"]
+[node name="Pivot2" type="Node3D" parent="_Stuffs_/Pivot"]
 
-[node name="Camera3D" type="Camera3D" parent="_Stuffs_/Pivit/Pivit2"]
+[node name="Camera3D" type="Camera3D" parent="_Stuffs_/Pivot/Pivot2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.000001)
 environment = ExtResource("2_uj36f")
 current = true
@@ -58,5 +53,7 @@ script = ExtResource("4_q0ee7")
 
 [node name="Timer" type="Timer" parent="_Stuffs_"]
 wait_time = 1.5
+
+[node name="Timer2" type="Timer" parent="_Stuffs_"]
 
 [node name="Storage" type="Node3D" parent="."]

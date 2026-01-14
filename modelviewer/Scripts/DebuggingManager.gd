@@ -4,7 +4,7 @@ class_name DEBUGGING_MANAGER extends Node
 static func ErrorMessage(Text:String) -> void:
 	var ErrorBox = Ui.find_child("ErrorBox") as LineEdit
 	ErrorBox.text = Text
-	VariantManager.GetTimer.start(0)
+	VARIANT_MANAGER.GetTimer.start(0)
 
 ## This clears the message box (I know it can be better, ok)
 static func ClearErrorMessage() -> void:
