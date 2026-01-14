@@ -1,4 +1,4 @@
- <img width="312" height="312" alt="ModelViewIcon312" src="https://github.com/user-attachments/assets/8a681106-0ed3-43dd-bb33-ae8d49539269" />
+<img width="94" height="94" alt="ModelViewIcon94" src="https://github.com/user-attachments/assets/dc121074-f7e7-40fd-a770-a1c55fabc944" />
 
 
 R-Take ModelViewer is a simple app where you can view models.
