@@ -7,6 +7,7 @@ static func InstnaceResize(Size:float) -> void:
 
 		VARIANT_MANAGER.InstanceModel.scale = Vector3(Size,Size,Size)
 
+# This function will search for blendshapes that is parented to the Skeleton3D.
 static func GetBlendShapesFromSkeleton3D(Value:int) -> void:
 	var GetInstance = VARIANT_MANAGER.InstanceModel
 	var GetTree : Tree = Ui.find_child("Tree2")
@@ -23,6 +24,7 @@ static func GetBlendShapesFromSkeleton3D(Value:int) -> void:
 
 					UI_MANAGER.AddBlendShapeItem(GetTree,Root,TheNode.name,GetBlend)
 
+# This function also will search for blendshapes if not parented to the Skeleton3D (this will be called when a model is being imported).
 static func GetBlendShapes(Instance:Node3D) -> void:
 	var GetTree : Tree = Ui.find_child("Tree2")
 	var Root = GetTree.create_item()
@@ -46,6 +48,7 @@ static func GetBlendShapes(Instance:Node3D) -> void:
 
 					UI_MANAGER.AddBlendShapeItem(GetTree,Root,TheNode.name,GetBlend)
 
+# This function will search for surface materials on meshes.
 static func GetSurfaceMaterials(GetInstance:Node3D) -> void:
 	var GetTree : Tree = Ui.find_child("Tree")
 	var Root = GetTree.create_item()

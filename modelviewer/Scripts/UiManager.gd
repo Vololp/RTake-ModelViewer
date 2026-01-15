@@ -24,10 +24,12 @@ static func RemoveButton() -> void:
 
 		DisableButton(true)
 
+# This function will clear the trees in the user-interface.
 static func ClearTrees() -> void:
 	Ui.find_child("Tree").clear()
 	Ui.find_child("Tree2").clear()
 
+# This function will check what tree-item is selected.
 static func TreeSelected() -> void:
 	var GetItem : TreeItem = Ui.find_child("Tree2").get_selected()
 
@@ -36,6 +38,7 @@ static func TreeSelected() -> void:
 	VARIANT_MANAGER.GetMeshWithSelBlend = GetItem.get_suffix(0).get_slice(" ",1)
 	VARIANT_MANAGER.SelectedBlendShape = GetItem.get_index()
 
+# This function will change the blendshape value of the mesh when the user deselects a tree-item.
 static func BlendShapeEnditEnded() -> void:
 	var _GetMesh : MeshInstance3D = VARIANT_MANAGER.InstanceModel.find_child(VARIANT_MANAGER.GetMeshWithSelBlend)
 	var _GetTreeItems = Ui.find_child("Tree2").get_root().get_children()
@@ -45,13 +48,14 @@ static func BlendShapeEnditEnded() -> void:
 	_GetMesh.set_blend_shape_value(VARIANT_MANAGER.SelectedBlendShape,_GetTreeItems[VARIANT_MANAGER.SelectedBlendShape].get_range(0))
 	VARIANT_MANAGER.GetBlendShapeItem = null
 
-
+# This function will add a tree-item to the tree-node that shows the number of materials a mesh has.
 static func AddSurfaceMaterialItem(ToWhere:Tree,IntoWhat:TreeItem,MeshName:String,Value:int) -> void:
 	var NewItem = ToWhere.create_item(IntoWhat)
 
 	NewItem.set_description(0,str(MeshName," ",Value))
 	NewItem.set_text(0,str(MeshName," | ",Value))
 
+# This function will add a tree-item to the tree-node that shows the number of blendshapes a mesh has.
 static func AddBlendShapeItem(ToWhere:Tree,IntoWhat:TreeItem,MeshName:String,Value:int) -> void:
 	var NewItem = ToWhere.create_item(IntoWhat)
 
@@ -61,6 +65,7 @@ static func AddBlendShapeItem(ToWhere:Tree,IntoWhat:TreeItem,MeshName:String,Val
 	NewItem.set_editable(0,true)
 	NewItem.set_range_config(0,0,1,0,false)
 
+# This function will update the Label[-SpeedLabel-] to show the max-speed for the camera-controller.
 static func ChangeSpeedLabel() -> void:
 
 	match Ui.find_child("SpeedLabel").visible:
@@ -73,6 +78,7 @@ static func ChangeSpeedLabel() -> void:
 			Ui.find_child("SpeedLabel").text = str(VARIANT_MANAGER.CameraSpeed)
 			VARIANT_MANAGER.GetTimer2.start()
 
+# This function will set the visible to false on Label[-SpeedLabel-].
 static func SpeedLabelOff() -> void:
 	Ui.find_child("SpeedLabel").visible = false
 
@@ -116,6 +122,7 @@ static func ShowPanel(PanelName:String) -> void:
 		GetAnimation.play_backwards("Open_SettingsPanel")
 		VARIANT_MANAGER.PanelShow = false
 
+# This function will open the help-panel and also closing the panel.
 static func ShowHelpPanel() -> void:
 	var GetAnimation = Ui.find_child("AnimationPlayer") as AnimationPlayer
 
@@ -128,8 +135,10 @@ static func ShowHelpPanel() -> void:
 			VARIANT_MANAGER.HelpPanelShow = true
 			GetAnimation.play("Open_HelpPanel")
 
+# This function will show the settings-panel.
 static func ShowSettingsPanel() -> void:
 	ShowPanel("Settings")
 
+# This function will show the instance-panel.
 static func ShowInstancePanel() -> void:
 	ShowPanel("Instance")

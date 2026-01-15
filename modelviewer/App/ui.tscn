@@ -352,7 +352,7 @@ text = "                               > Controls <
    Right Mouse Button : to pivit the camera.
 
    Scroll in & out : to zoom closer or far 
-                                from the model.
+   from the model and for camera speed
 
    R Key : is to remove the model.
 
@@ -1048,5 +1048,4 @@ theme = ExtResource("4_u48er")
 text = "Volumetric Fog"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1395067777]
-deterministic = true
 libraries/ = SubResource("AnimationLibrary_vw2im")

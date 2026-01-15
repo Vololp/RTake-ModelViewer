@@ -75,8 +75,10 @@ static func ModeChange() -> void:
 				Ui.find_child("ProjectOption").selected = 0
 				VARIANT_MANAGER.CurrentCamera.projection = Ui.find_child("ProjectOption").selected
 
+# This function will toggle the ssao in the scene.
 static func SSAO_Toggle(BoolValue:bool) -> void:
 	VARIANT_MANAGER.CurrentCamera.environment.ssao_enabled = BoolValue
 
+# This function will toggle the volumetric-fog in the scene.
 static func VOLUMEFOG_Toggle(BoolValue:bool) -> void:
 	VARIANT_MANAGER.CurrentCamera.environment.volumetric_fog_enabled = BoolValue
