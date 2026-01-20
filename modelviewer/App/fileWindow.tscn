@@ -1,8 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcc1twjqvgo7p"]
+[gd_scene format=3 uid="uid://dcc1twjqvgo7p"]
 
-[ext_resource type="Theme" uid="uid://c6pd0gfshfxu2" path="res://Theme/UI_Theme_Normal.tres" id="1_0pddw"]
-
-[node name="FileDialog" type="FileDialog"]
+[node name="FileDialog" type="FileDialog" unique_id=440604232]
 oversampling_override = 1.0
 title = "Load a Model"
 initial_position = 1
@@ -11,16 +9,12 @@ transient = false
 unresizable = true
 min_size = Vector2i(900, 500)
 max_size = Vector2i(900, 500)
-theme = ExtResource("1_0pddw")
 ok_button_text = "Load"
 dialog_close_on_escape = false
 cancel_button_text = "Close"
 mode_overrides_title = false
 file_mode = 0
 access = 2
-filters = PackedStringArray("*.gltf", "*.fbx", "*.obj", "*.glb")
-hidden_files_toggle_enabled = false
-file_filter_toggle_enabled = false
-file_sort_options_enabled = false
+filters = PackedStringArray("*.fbx", "*.glb")
+use_native_dialog = true
 folder_creation_enabled = false
-layout_toggle_enabled = false
